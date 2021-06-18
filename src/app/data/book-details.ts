@@ -1,82 +1,108 @@
-import { BookDetail } from "../models/book-detail";
+import { BookDetail } from '../models/book-detail';
 
 export const bookDetails: Map<number, BookDetail> = new Map([
   [
     1,
     {
       id: 1,
-      title: "Name of the Wind",
+      title: 'The Jungle Book',
       author: {
-        name: "Patrick Rothfuss",
+        name: 'Rudyard Kipling',
         id: 1
       },
-      editor: "DAW Books",
-      parutionYear: "2007"
+      editor: 'Macmillan',
+      parutionYear: '1894'
     }
   ],
   [
     2,
     {
       id: 2,
-      title: "The Wise Man's Fear",
+      title: 'The Second Jungle Book',
       author: {
-        name: "Patrick Rothfuss",
+        name: 'Rudyard Kipling',
         id: 1
       },
-      editor: "DAW Books",
-      parutionYear: "2011"
+      editor: 'Macmillan',
+      parutionYear: '1895'
     }
   ],
   [
     3,
     {
       id: 3,
-      title: "Words of Radiance",
+      title: 'Animal Farm',
       author: {
-        name: "Brandon Sanderson",
+        name: 'George Orwell',
         id: 2
       },
-      editor: "Tor Books",
-      parutionYear: "2014"
+      editor: 'Secker and Warburg',
+      parutionYear: '1945'
     }
   ],
   [
     4,
     {
       id: 4,
-      title: "Oathbringer",
+      title: 'Empire of the Ants',
       author: {
-        name: "Brandon Sanderson",
-        id: 2
+        name: 'Bernard Werber',
+        id: 3
       },
-      editor: "Tor Books",
-      parutionYear: "2017"
+      editor: 'Le Livre de Poche',
+      parutionYear: '1991'
     }
   ],
   [
     5,
     {
       id: 5,
-      title: "The Last Wish",
+      title: 'The Day of the Ants',
       author: {
-        name: "Andrzej Sapkowski",
+        name: 'Bernard Werber',
         id: 3
       },
-      editor: "superNOWA",
-      parutionYear: "1993"
+      editor: 'Le Livre de Poche',
+      parutionYear: '1992'
     }
   ],
   [
     6,
     {
       id: 6,
-      title: "The Eye of the World",
+      title: 'The Lion',
       author: {
-        name: "Robert Jordan",
+        name: 'Joseph Kessel',
         id: 4
       },
-      editor: "Tor Books",
-      parutionYear: "1990"
+      editor: 'Gallimard',
+      parutionYear: '1958'
+    }
+  ],
+  [
+    7,
+    {
+      id: 7,
+      title: 'White Fang',
+      author: {
+        name: 'Jack London',
+        id: 5
+      },
+      editor: 'Macmillan',
+      parutionYear: '1906'
+    }
+  ],
+  [
+    8,
+    {
+      id: 8,
+      title: 'The Call of the Wild',
+      author: {
+        name: 'Jack London',
+        id: 5
+      },
+      editor: 'Macmillan',
+      parutionYear: '1903'
     }
   ]
 ]);

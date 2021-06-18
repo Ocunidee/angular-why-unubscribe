@@ -1,20 +1,24 @@
-import { Author } from "../models/author";
+import { Author } from '../models/author';
 
 export const authors: Author[] = [
   {
     id: 1,
-    name: "Patrick Rothfuss"
+    name: 'Rudyard Kipling'
   },
   {
     id: 2,
-    name: "Brandon Sanderson"
+    name: 'George Orwell'
   },
   {
     id: 3,
-    name: "Andrzej Sapkowski"
+    name: 'Bernard Werber'
   },
   {
     id: 4,
-    name: "Robert Jordan"
+    name: 'Joseph Kessel'
+  },
+  {
+    id: 5,
+    name: 'Jack London'
   }
 ];

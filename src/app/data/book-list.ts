@@ -1,34 +1,44 @@
-import { Book } from "../models/book";
+import { Book } from '../models/book';
 
 export const books: Book[] = [
   {
     id: 1,
-    title: "Name of the Wind",
-    author: "Patrick Rothfuss"
+    title: 'The Jungle Book',
+    author: 'Rudyard Kipling'
   },
   {
     id: 2,
-    title: "The Wise Man's Fear",
-    author: "Patrick Rothfuss"
+    title: 'The Second Jungle Book',
+    author: 'Rudyard Kipling'
   },
   {
     id: 3,
-    title: "Words of Radiance",
-    author: "Brandon Sanderson"
+    title: 'Animal Farm',
+    author: 'George Orwell'
   },
   {
     id: 4,
-    title: "Oathbringer",
-    author: "Brandon Sanderson"
+    title: 'Empire of the Ants',
+    author: 'Bernard Werber'
   },
   {
     id: 5,
-    title: "The Last Wish",
-    author: "Andrzej Sapkowski"
+    title: 'The Day of the Ants',
+    author: 'Bernard Werber'
   },
   {
     id: 6,
-    title: "The Eye of the World",
-    author: "Robert Jordan"
+    title: 'The Lion',
+    author: 'Joseph Kessel'
+  },
+  {
+    id: 7,
+    title: 'White Fang',
+    author: 'Jack London'
+  },
+  {
+    id: 8,
+    title: 'The Call of the Wild',
+    author: 'Jack London'
   }
 ];
