@@ -11,7 +11,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 1
       },
       editor: 'Macmillan',
-      parutionYear: '1894'
+      parutionYear: '1894',
+      pageNumber: 206
     }
   ],
   [
@@ -24,7 +25,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 1
       },
       editor: 'Macmillan',
-      parutionYear: '1895'
+      parutionYear: '1895',
+      pageNumber: 202
     }
   ],
   [
@@ -37,7 +39,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 2
       },
       editor: 'Secker and Warburg',
-      parutionYear: '1945'
+      parutionYear: '1945',
+      pageNumber: 112
     }
   ],
   [
@@ -50,7 +53,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 3
       },
       editor: 'Le Livre de Poche',
-      parutionYear: '1991'
+      parutionYear: '1991',
+      pageNumber: 306
     }
   ],
   [
@@ -63,7 +67,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 3
       },
       editor: 'Le Livre de Poche',
-      parutionYear: '1992'
+      parutionYear: '1992',
+      pageNumber: 402
     }
   ],
   [
@@ -76,7 +81,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 4
       },
       editor: 'Gallimard',
-      parutionYear: '1958'
+      parutionYear: '1958',
+      pageNumber: 319
     }
   ],
   [
@@ -89,7 +95,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 5
       },
       editor: 'Macmillan',
-      parutionYear: '1906'
+      parutionYear: '1906',
+      pageNumber: 204
     }
   ],
   [
@@ -102,7 +109,8 @@ export const bookDetails: Map<number, BookDetail> = new Map([
         id: 5
       },
       editor: 'Macmillan',
-      parutionYear: '1903'
+      parutionYear: '1903',
+      pageNumber: 232
     }
   ]
 ]);

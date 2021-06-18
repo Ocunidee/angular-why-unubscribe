@@ -12,7 +12,6 @@ export class BookListComponent implements OnInit {
   books: Book[];
   isLoading = false;
   
-
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {

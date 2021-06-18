@@ -1,4 +1,4 @@
-import { Author } from "./author";
+import { Author } from './author';
 
 export interface BookDetail {
   id: number;
@@ -6,4 +6,5 @@ export interface BookDetail {
   author: Author;
   editor: string;
   parutionYear: string;
+  pageNumber: number;
 }

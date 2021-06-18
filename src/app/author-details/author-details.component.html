@@ -1,9 +1,15 @@
-<h1>{{details.name}}</h1>
+<h1 class="icon">✍️</h1>
 
-<div><strong>Nationality:</strong> {{details.nationality}}</div>
-<div><strong>Birth year:</strong> {{details.birthYear}}</div>
+<app-loader *ngIf="isLoading else info"></app-loader>
 
-<h2>Books</h2>
-<ul>
-  <li *ngFor="let book of details.books">{{book.title}} <a routerLink="/books/{{book.id}}">🔍</a></li>
-</ul>
+<ng-template #info>
+  <h1>{{details.name}}</h1>
+
+  <div><strong>Nationality:</strong> {{details.nationality}}</div>
+  <div><strong>Birth year:</strong> {{details.birthYear}}</div>
+
+  <h2>Books</h2>
+  <ul>
+    <li *ngFor="let book of details.books">{{book.title}} <a routerLink="/books/{{book.id}}">🔍</a></li>
+  </ul>
+</ng-template>

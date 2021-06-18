@@ -25,6 +25,6 @@ export class BookService {
     const newBook = { id: id, ...book };
     books.push(newBook);
 
-    return of(void 0).pipe(delay(1000));
+    return of(void 0).pipe(delay(1500));
   }
 }

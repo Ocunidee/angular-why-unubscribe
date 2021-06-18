@@ -1,16 +1,24 @@
-<div class="info">
-  <div>📕</div>
-  <p>{{details?.title}}</p>
-</div>
-<div class="info">
-  <div><a routerLink="/authors/{{details.author.id}}">✍️</a></div>
-  <p>{{details?.author.name}}</p>
-</div>
-<div class="info">
-  <div>🏢</div>
-  <p>{{details?.editor}}</p>
-</div>
-<div class="info">
-  <div>📆</div>
-  <p>{{details?.parutionYear}}</p>
-</div>
+<h1 class="icon">📖</h1>
+
+<app-loader *ngIf="isLoading else info"></app-loader>
+<ng-template #info>
+  <h1>{{details?.title}}</h1>
+  <div class="info-container">
+    <div class="info">
+      <div><a routerLink="/authors/{{details.author.id}}">✍️</a></div>
+      <p>{{details?.author.name}}</p>
+    </div>
+    <div class="info">
+      <div>📆</div>
+      <p>{{details?.parutionYear}}</p>
+    </div>
+    <div class="info">
+      <div>🏢</div>
+      <p>{{details?.editor}}</p>
+    </div>
+    <div class="info">
+      <div>📝</div>
+      <p>{{details?.pageNumber}}</p>
+    </div>
+  </div>
+</ng-template>

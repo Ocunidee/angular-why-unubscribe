@@ -1,4 +1,5 @@
 <h1>Authors ✍️</h1>
-<ul>
+<app-loader *ngIf="isLoading"></app-loader>
+<ul *ngIf="authors">
   <li *ngFor="let author of authors">{{author.name}} <a routerLink="{{author.id}}">🔍</a></li>
 </ul>
