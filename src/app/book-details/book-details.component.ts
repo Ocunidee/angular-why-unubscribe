@@ -17,9 +17,6 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.details = bookDetails.get(Number(id));
-    interval(1000).subscribe(counter => {
-      console.log(counter);
-    });
   }
 
   ngOnDestroy(): void {
