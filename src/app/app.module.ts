@@ -10,10 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AuthorService } from './services/author.service';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  declarations: [AppComponent, BookListComponent, BookDetailsComponent, HomeComponent, AuthorListComponent, AuthorDetailsComponent, NavbarComponent],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, BookListComponent, BookDetailsComponent, HomeComponent, AuthorListComponent, AuthorDetailsComponent, NavbarComponent, LoaderComponent],
+  bootstrap: [AppComponent],
+  providers: [AuthorService]
 })
 export class AppModule {}

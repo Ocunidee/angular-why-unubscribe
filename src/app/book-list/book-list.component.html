@@ -1,4 +1,5 @@
 <h1>Books 📚</h1>
+<app-loader>Loading data ...</app-loader>
 <ul>
   <li *ngFor="let book of books">{{book.title}} - {{book.author}} <a routerLink="/books/{{book.id}}">🔍</a></li>
 </ul>
