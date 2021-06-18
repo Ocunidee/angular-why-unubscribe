@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
+import { Author } from '../models/author';
 import { Book } from '../models/book';
 import { BookService } from '../services/book.service';
 
@@ -10,11 +12,29 @@ import { BookService } from '../services/book.service';
 })
 export class BookListComponent implements OnInit {
   books: Book[];
+  authors: Author[];
   isLoading = false;
-  
-  constructor(private bookService: BookService) {}
+  bookForm: FormGroup;
+  showBookForm = false;
+
+  constructor(
+    private bookService: BookService,
+    private formBuilder: FormBuilder
+  ) {
+    this.bookForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      author: ['', Validators.required],
+      parutionYear: ['', Validators.required],
+      pageNumber: ['', Validators.required],
+      editor: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
+    this.fetchBooks();
+  }
+
+  fetchBooks(): void {
     this.isLoading = true;
     this.bookService
       .getList()
@@ -22,5 +42,15 @@ export class BookListComponent implements OnInit {
       .subscribe(books => {
         this.books = books;
       });
+  }
+
+  addBook(): void {
+    this.bookService.add(this.bookForm.value).subscribe(_ => {
+      this.showBookForm = false;
+    });
+  }
+
+  showForm(): void {
+    this.showBookForm = true;
   }
 }

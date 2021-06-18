@@ -15,6 +15,10 @@ export class AuthorListComponent implements OnInit {
   constructor(private authorService: AuthorService) {}
 
   ngOnInit(): void {
+    this.fetchAuthors();
+  }
+
+  fetchAuthors(): void {
     this.isLoading = true;
     this.authorService
       .getList()

@@ -6,7 +6,9 @@ import { authors } from '../data/author-list';
 import { Author } from '../models/author';
 import { AuthorDetail } from '../models/author-detail';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthorService {
   constructor() {}
 

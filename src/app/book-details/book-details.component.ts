@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { BookDetail } from '../models/book-detail';
@@ -19,6 +19,10 @@ export class BookDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.fetchBookDetail();
+  }
+
+  fetchBookDetail(): void {
     this.isLoading = true;
     const id = this.route.snapshot.paramMap.get('id');
     this.bookService

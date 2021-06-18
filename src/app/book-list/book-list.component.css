@@ -1,0 +1,32 @@
+.book-form {
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 70px;
+}
+
+.book-form input {
+  grid-column: span 3;
+}
+
+.book-form label {
+  grid-column: span 1;
+}
+
+.book-form h2 {
+  grid-column: span 4;
+  text-align: center;
+  margin-top: 0;
+}
+
+.book-form button {
+  grid-column: span 1 / 5;
+}
+
+.add-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 10px;
+}

@@ -1,5 +1,33 @@
 <h1>Books 📚</h1>
+
+<div *ngIf="!showBookForm else form" class="add-button-container">
+  <button (click)="showForm()">Add a book</button>
+</div>
+
 <app-loader *ngIf="isLoading"></app-loader>
-<ul *ngIf>
+
+<ul *ngIf="books">
   <li *ngFor="let book of books">{{book.title}} - {{book.author}} <a routerLink="/books/{{book.id}}">🔍</a></li>
 </ul>
+
+
+<ng-template #form>
+  <form class="book-form" [formGroup]="bookForm" (ngSubmit)="addBook()">
+    <h2>Add a book to your library</h2>
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" type="text"/>
+
+    <label>Author</label>
+    <input formControlName="author" type="text"/>
+
+    <label>Editor</label>
+    <input formControlName="editor" type="text"/>
+
+    <label>Parution Year</label>
+    <input formControlName="parutionYear" type="text"/>
+
+    <label>Page Number</label>
+    <input formControlName="pageNumber" type="text"/>
+    <button type="submit" [disabled]="bookForm.invalid">Add book</button>
+  </form>
+</ng-template>

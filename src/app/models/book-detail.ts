@@ -5,6 +5,6 @@ export interface BookDetail {
   title: string;
   author: Author;
   editor: string;
-  parutionYear: string;
-  pageNumber: number;
+  parutionYear: string | number;
+  pageNumber: string | number;
 }
