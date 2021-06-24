@@ -47,6 +47,7 @@ export class BookListComponent implements OnInit {
   addBook(): void {
     this.bookService.add(this.bookForm.value).subscribe(_ => {
       this.showBookForm = false;
+      this.fetchBooks();
     });
   }
 

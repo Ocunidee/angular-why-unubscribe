@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { authorDetails } from '../data/author-details';
-import { authors } from '../data/author-list';
-import { bookDetails } from '../data/book-details';
-import { books } from '../data/book-list';
 import { Book } from '../models/book';
 import { BookAddition } from '../models/book-addition';
 import { BookDetail } from '../models/book-detail';
@@ -14,42 +10,52 @@ import { BookDetail } from '../models/book-detail';
 })
 export class BookService {
   getList(): Observable<Book[]> {
-    return of(books).pipe(delay(1000));
+    return of(JSON.parse(localStorage.getItem('books'))).pipe(delay(1000));
   }
 
   getDetail(bookId: string): Observable<BookDetail> {
-    return of(bookDetails.get(Number(bookId))).pipe(delay(1000));
+    return of(
+      JSON.parse(localStorage.getItem('bookDetails'))[Number(bookId)]
+    ).pipe(delay(1000));
   }
 
   add(book: BookAddition): Observable<void> {
-    
-    setTimeout(() => {
-      const bookId = books.length + 1;
-      let author = authors.find(a => {
-        return a.name == book.author;
+    let books = JSON.parse(localStorage.getItem('books'));
+    let authors = JSON.parse(localStorage.getItem('authors'));
+    let authorDetails = JSON.parse(localStorage.getItem('authorDetails'));
+    let bookDetails = JSON.parse(localStorage.getItem('bookDetails'));
+
+    const bookId = books.length;
+
+    let author = authors.find(a => {
+      return a.name == book.author;
+    });
+    if (!author) {
+      author = { id: authors.length, name: book.author };
+      authors.push(author);
+    }
+
+    const newBookDetail = { id: bookId, ...book, author: author };
+    const newBook = { id: bookId, title: book.title, author: book.author };
+    bookDetails.push(newBookDetail);
+    books.push(newBook);
+
+    let authorDetail = authorDetails[author.id];
+    if (!authorDetail) {
+      authorDetails.push({
+        ...author,
+        nationality: 'TBD',
+        birthYear: 'TBD',
+        books: [newBook]
       });
-      let authorDetail = authorDetails.get(author.id);
-      if (!author) {
-        const authorId = authors.length + 1;
-        author = { id: authorId, name: book.author };
-        authors.push(author);
-      }
+    } else {
+      authorDetails[author.id].books = [...authorDetail.books, newBook];
+    }
 
-      const newBookDetail = { id: bookId, ...book, author: author };
-      const newBook = { id: bookId, title: book.title, author: book.author };
-      bookDetails.set(bookId, newBookDetail);
-      books.push(newBook);
-
-      if (!authorDetail) {
-        authorDetails.set(author.id, {
-          ...author,
-          nationality: 'TBD',
-          birthYear: 'TBD',
-          books: [newBook]
-        });
-      }
-      authorDetail.books = [...authorDetail.books, newBook];
-    }, 1500);
+    localStorage.setItem('books', JSON.stringify(books));
+    localStorage.setItem('authors', JSON.stringify(authors));
+    localStorage.setItem('authorDetails', JSON.stringify(authorDetails));
+    localStorage.setItem('bookDetails', JSON.stringify(bookDetails));
 
     return of(void 0).pipe(delay(1500));
   }

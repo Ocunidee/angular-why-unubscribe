@@ -2,23 +2,23 @@ import { Author } from '../models/author';
 
 export const authors: Author[] = [
   {
-    id: 1,
+    id: 0,
     name: 'Rudyard Kipling'
   },
   {
-    id: 2,
+    id: 1,
     name: 'George Orwell'
   },
   {
-    id: 3,
+    id: 2,
     name: 'Bernard Werber'
   },
   {
-    id: 4,
+    id: 3,
     name: 'Joseph Kessel'
   },
   {
-    id: 5,
+    id: 4,
     name: 'Jack London'
   }
 ];
