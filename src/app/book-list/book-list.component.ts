@@ -14,6 +14,7 @@ export class BookListComponent implements OnInit {
   books: Book[];
   authors: Author[];
   isLoading = false;
+  submittingAddBook = false;
   bookForm: FormGroup;
   showBookForm = false;
 
@@ -45,10 +46,13 @@ export class BookListComponent implements OnInit {
   }
 
   addBook(): void {
-    this.bookService.add(this.bookForm.value).subscribe(_ => {
-      this.showBookForm = false;
-      this.fetchBooks();
-    });
+    this.submittingAddBook = true;
+    this.bookService
+      .add(this.bookForm.value)
+      .pipe(finalize(() => (this.submittingAddBook = false)))
+      .subscribe(_ => {
+        this.showBookForm = false;
+      });
   }
 
   showForm(): void {
